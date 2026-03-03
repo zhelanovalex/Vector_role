@@ -4,12 +4,12 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: instance
-    image: centoc_ansib:latest
+  - name: centos7
+    image: zzugly/centoc7_ansib:1.0.0
     pre_build_image: true
     command: /sbin/init
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
     privileged: true
     cgroupns_mode: host
 provisioner:
